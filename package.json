@@ -1,0 +1,47 @@
+{
+  "name": "generator-soal-cerdas-v2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "start": "node dist/server.cjs"
+  },
+  "dependencies": {
+    "@google/genai": "^1.25.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.19.0",
+    "cookie-parser": "^1.4.7",
+    "docx": "8.5.0",
+    "dotenv": "^17.4.2",
+    "esbuild": "^0.28.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "googleapis": "^171.4.0",
+    "katex": "^0.16.45",
+    "mammoth": "^1.12.0",
+    "motion": "^12.38.0",
+    "pdfjs-dist": "^5.7.284",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-math": "^6.0.0",
+    "word-extractor": "^1.0.4",
+    "xlsx": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.2.2",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

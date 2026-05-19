@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 12s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes beam {
+  0%, 100% { opacity: 0.1; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.3; transform: scale(1.2) rotate(5deg); }
+}
+
+.animate-beam {
+  animation: beam 10s ease-in-out infinite;
+}
+
+/* Custom styles for math rendering */
+mjx-container {
+  vertical-align: -0.1em;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media print {
+  body * {
+    display: none !important;
+  }
+
+  [data-testid="document-panel"], [data-testid="document-panel"] * {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  [data-testid="document-panel"] {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    transform: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+  
+  #printable-document {
+    margin: 0;
+    padding: 1.5cm;
+    font-size: 12pt;
+    color: black !important;
+    background: white !important;
+    width: 100%;
+  }
+
+  .no-print, .no-print * {
+    display: none !important;
+  }
+
+  .printable-question {
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+}
